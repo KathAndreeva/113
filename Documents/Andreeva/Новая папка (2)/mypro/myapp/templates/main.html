@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+  {% load static %}
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>buyelephant</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-dark p-3 bg-danger"
+      id="headerNav"
+    >
+      <div
+        class="container-fluid"
+        style="
+          font-size: 20pt;
+          font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+            sans-serif;
+          background-color: rgb(245, 173, 173);
+          color: blueviolet;
+        "
+      >
+        <a class="navbar-brand d-block d-lg-none" href="#"> </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link mx-2 active" aria-current="page" href="#"
+                >Главная</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="#">Доставка</a>
+            </li>
+            <li class="nav-item d-none d-lg-block">
+              <a class="nav-link mx-2" href="#"> </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="#">Прайс</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link mx-2 dropdown-toggle"
+                href="#"
+                id="navbarDropdownMenuLink"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Личный кабинет
+              </a>
+              <ul
+                class="dropdown-menu"
+                aria-labelledby="navbarDropdownMenuLink"
+              >
+                <li><a class="dropdown-item" href="#">Настройки</a></li>
+                <li><a class="dropdown-item" href="#">Покупки</a></li>
+                <li><a class="dropdown-item" href="#">Корзина</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="row row-cols-1 row-cols-md-2 g-4" style="padding-top: 100px">
+      {%for i in res %}
+      <div class="col">
+        <div class="card" style="width: 30rem; margin-left: auto">
+          <img
+            src="{% static i.pct|cut:'myapp/static' %}"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">Дамбо</h5>
+            <p class="card-text">Цена 2500000 у.е.</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="col">
+        <div class="card" style="width: 27rem; margin-right: auto">
+          <img
+            src="https://cdn.culture.ru/images/110f9c20-b41b-5d40-893f-57c25b041257"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">Джамбо</h5>
+            <p class="card-text">Цена 3500000 у.е</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="width: 30rem; margin-left: auto">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/African_elephant_warning_raised_trunk.jpg/1599px-African_elephant_warning_raised_trunk.jpg?20110904173750"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">Нанги</h5>
+            <p class="card-text">Цена 1500000 у.е.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="width: 30rem; margin-right: auto">
+          <img
+            src="https://avatars.dzeninfra.ru/get-zen_doc/1244179/pub_5d35ce4a9ca21400ad22efc9_5d35e01dfbe6e7177164598c/scale_1200"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">Элмер</h5>
+            <p class="card-text">Цена 1000000 у.е</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
